@@ -8,6 +8,16 @@ front end. Six instruction classes are wired and verified end to end:
 ALU/ADDI, JAL, LOAD, STORE, BRANCH (BEQ/BNE/BLT), and SYSTEM (HALT/WFI),
 plus reserved-encoding fault detection.
 
+## Tech stack
+
+| Layer | Tool |
+|---|---|
+| HDL | Verilog (IEEE 1364-2005) |
+| Simulation | Icarus Verilog (`iverilog` / `vvp`) |
+| Waveform viewing | GTKWave |
+| Synthesis / netlist extraction | Yosys (`write_json`) |
+| Circuit diagrams | [netlistsvg](https://github.com/nturley/netlistsvg) (gate-level), hand-drawn SVG (architecture-level) |
+
 ## Background
 
 Out-of-order execution exists to solve one problem: a strictly in-order
@@ -44,27 +54,11 @@ branch, and system-call philosophy.
 
 ## Architecture
 
-```
-        +------------+     +-----------+     +------------------------+
- imem ->| fetch_unit |---->|  decoder  |---->|        ooo_top          |
- (word- |            |     |           |     |  (RAT / RS / ROB / ALU  |
-  addr, |  PC, stall,|     | ext-class |     |   / CDB, plus immediate |
-  external| redirect |     | field     |     |   handling for ADDI/JAL |
-  memory)|           |     | extract   |     |   / LOAD write-back)    |
-        +------------+     +-----------+     +------------------------+
-              ^      |                              ^        ^
-              |      +---------+  +---------+        |        |
-              |                v  v         v         |        |
-              |          +-----------+  +-----------+  |        |
-              |          |branch_unit|  |lsu_frontend|--+        |
-              +----------| (redirect)|  | (dmem addr/|-----------+
-           (redirect on   +-----------+  | we/wdata,  |
-            taken branch                 | load latch)|
-            or dispatched                +-----------+
-            JAL)                                |
-                                                 v
-                                          dmem (external)
-```
+**Dataflow** — how fetch, decode, the front-end resolvers, and the
+out-of-order backend connect (drawn to match how the gate-level diagrams
+below are read, not auto-generated from the netlist):
+
+![riscv_ooo_top dataflow](docs/images/riscv_ooo_top_dataflow.svg)
 
 Instruction and data memory both live outside `riscv_ooo_top`: the core
 exposes word-addressed `imem_addr`/`imem_rdata` and a request/ready
@@ -228,6 +222,16 @@ iverilog -g2005 -o sim/tb_fault.vvp -I rtl \
 vvp sim/tb_fault.vvp
 # TB_RISCV_OOO_TOP_FAULT: PASS (both fault paths correctly latched core_faulted, 0 errors)
 ```
+
+### Proof of execution
+
+Waveform captured from `tb/tb_riscv_ooo_top.v`'s run in GTKWave —
+`pc_out`, the `dmem` request/ready handshake, and `commit_valid`/
+`commit_rd`/`commit_data` advancing across the 18 verified commits:
+
+![riscv_ooo_top simulation waveform](docs/images/gtkwave_screenshot.png)
+
+Full-resolution waveform: [`docs/images/GTKwave_output.pdf`](docs/images/GTKwave_output.pdf).
 
 Circuit diagrams above were regenerated from the RTL with Yosys
 (`write_json`) piped into netlistsvg — commands for every diagram in this
