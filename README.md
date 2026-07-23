@@ -1,4 +1,4 @@
-# riscv_ooo_core
+# RISC-V OoO Core
 
 A small out-of-order RISC-V-style processor core: in-order fetch and
 decode feeding a Tomasulo-style out-of-order execution backend (register
