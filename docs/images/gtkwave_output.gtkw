@@ -1,0 +1,38 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Sun Jul 19 10:38:43 2026
+[*]
+[dumpfile] "/mnt/e/Tesla_Projects/Tesla/riscv_ooo_core/tb_riscv_ooo_top.vcd"
+[dumpfile_mtime] "Sun Jul 19 08:51:10 2026"
+[dumpfile_size] 56588
+[savefile] "/mnt/e/Tesla_Projects/Tesla/riscv_ooo_core/docs/images/gtkwave_output.gtkw"
+[timestart] 0
+[size] 1920 973
+[pos] -27 -24
+*-16.078812 41500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 297
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 288
+@28
+tb_riscv_ooo_top.clk
+@23
+tb_riscv_ooo_top.pc_out[31:0]
+@28
+tb_riscv_ooo_top.fetch_valid
+tb_riscv_ooo_top.dmem_req
+tb_riscv_ooo_top.dmem_we
+@22
+tb_riscv_ooo_top.dmem_addr[7:0]
+@28
+tb_riscv_ooo_top.dmem_ready
+tb_riscv_ooo_top.commit_valid
+@22
+tb_riscv_ooo_top.commit_rd[4:0]
+tb_riscv_ooo_top.commit_data[31:0]
+@28
+tb_riscv_ooo_top.core_halted
+tb_riscv_ooo_top.core_sleeping
+tb_riscv_ooo_top.core_clk_en
+[pattern_trace] 1
+[pattern_trace] 0

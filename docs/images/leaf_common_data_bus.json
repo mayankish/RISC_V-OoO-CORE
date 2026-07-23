@@ -1,0 +1,602 @@
+{
+  "creator": "Yosys 0.67 (git sha1 2d1509d1b, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)",
+  "modules": {
+    "common_data_bus": {
+      "attributes": {
+        "dynports": "00000000000000000000000000000001",
+        "top": "00000000000000000000000000000001",
+        "src": "riscv_ooo_core/rtl/common_data_bus.v:23.1-79.10"
+      },
+      "parameter_default_values": {
+        "DW": "00000000000000000000000000100000",
+        "NUM_FU": "00000000000000000000000000000001",
+        "TW": "00000000000000000000000000000100"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "fu0_valid": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "fu0_tag": {
+          "direction": "input",
+          "bits": [ 5, 6, 7, 8 ]
+        },
+        "fu0_data": {
+          "direction": "input",
+          "bits": [ 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ]
+        },
+        "fu0_grant": {
+          "direction": "output",
+          "bits": [ 41 ]
+        },
+        "fu1_valid": {
+          "direction": "input",
+          "bits": [ 42 ]
+        },
+        "fu1_tag": {
+          "direction": "input",
+          "bits": [ 43, 44, 45, 46 ]
+        },
+        "fu1_data": {
+          "direction": "input",
+          "bits": [ 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78 ]
+        },
+        "fu1_grant": {
+          "direction": "output",
+          "bits": [ 79 ]
+        },
+        "cdb_valid": {
+          "direction": "output",
+          "bits": [ 80 ]
+        },
+        "cdb_tag": {
+          "direction": "output",
+          "bits": [ 81, 82, 83, 84 ]
+        },
+        "cdb_data": {
+          "direction": "output",
+          "bits": [ 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ]
+        }
+      },
+      "cells": {
+        "$logic_and$riscv_ooo_core/rtl/common_data_bus.v:57$4": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:57.20-57.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "B": [ 117 ],
+            "Y": [ 41 ]
+          }
+        },
+        "$logic_and$riscv_ooo_core/rtl/common_data_bus.v:58$7": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:58.20-58.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 42 ],
+            "B": [ 118 ],
+            "Y": [ 79 ]
+          }
+        },
+        "$logic_and$riscv_ooo_core/rtl/common_data_bus.v:70$13": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:70.14-70.36"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 41 ],
+            "B": [ 42 ],
+            "Y": [ 119 ]
+          }
+        },
+        "$logic_and$riscv_ooo_core/rtl/common_data_bus.v:73$14": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:73.14-73.36"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 79 ],
+            "B": [ 4 ],
+            "Y": [ 120 ]
+          }
+        },
+        "$logic_not$riscv_ooo_core/rtl/common_data_bus.v:57$1": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:57.34-57.44"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 42 ],
+            "Y": [ 121 ]
+          }
+        },
+        "$logic_not$riscv_ooo_core/rtl/common_data_bus.v:57$2": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:57.48-57.60"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 122 ],
+            "Y": [ 123 ]
+          }
+        },
+        "$logic_not$riscv_ooo_core/rtl/common_data_bus.v:58$5": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:58.34-58.44"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "Y": [ 124 ]
+          }
+        },
+        "$logic_or$riscv_ooo_core/rtl/common_data_bus.v:57$3": {
+          "hide_name": 1,
+          "type": "$logic_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:57.34-57.60"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 121 ],
+            "B": [ 123 ],
+            "Y": [ 117 ]
+          }
+        },
+        "$logic_or$riscv_ooo_core/rtl/common_data_bus.v:58$6": {
+          "hide_name": 1,
+          "type": "$logic_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:58.34-58.60"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 124 ],
+            "B": [ 122 ],
+            "Y": [ 118 ]
+          }
+        },
+        "$logic_or$riscv_ooo_core/rtl/common_data_bus.v:61$8": {
+          "hide_name": 1,
+          "type": "$logic_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:61.20-61.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 41 ],
+            "B": [ 79 ],
+            "Y": [ 80 ]
+          }
+        },
+        "$procdff$23": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:67.1-77.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 125 ],
+            "Q": [ 122 ]
+          }
+        },
+        "$procmux$15": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:73.14-73.36|riscv_ooo_core/rtl/common_data_bus.v:73.10-75.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 122 ],
+            "B": [ "0" ],
+            "S": [ 120 ],
+            "Y": [ 126 ]
+          }
+        },
+        "$procmux$18": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:70.14-70.36|riscv_ooo_core/rtl/common_data_bus.v:70.10-75.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 126 ],
+            "B": [ "1" ],
+            "S": [ 119 ],
+            "Y": [ 127 ]
+          }
+        },
+        "$procmux$21": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:68.9-68.15|riscv_ooo_core/rtl/common_data_bus.v:68.5-75.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 127 ],
+            "S": [ 3 ],
+            "Y": [ 125 ]
+          }
+        },
+        "$ternary$riscv_ooo_core/rtl/common_data_bus.v:62$9": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:62.20-62.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 43, 44, 45, 46 ],
+            "B": [ 5, 6, 7, 8 ],
+            "S": [ 41 ],
+            "Y": [ 81, 82, 83, 84 ]
+          }
+        },
+        "$ternary$riscv_ooo_core/rtl/common_data_bus.v:63$10": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:63.20-63.51"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78 ],
+            "B": [ 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ],
+            "S": [ 41 ],
+            "Y": [ 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\rr_priority[0:0]": {
+          "hide_name": 1,
+          "bits": [ 125 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:67.1-77.4"
+          }
+        },
+        "$logic_and$riscv_ooo_core/rtl/common_data_bus.v:70$13_Y": {
+          "hide_name": 1,
+          "bits": [ 119 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:70.14-70.36"
+          }
+        },
+        "$logic_and$riscv_ooo_core/rtl/common_data_bus.v:73$14_Y": {
+          "hide_name": 1,
+          "bits": [ 120 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:73.14-73.36"
+          }
+        },
+        "$logic_not$riscv_ooo_core/rtl/common_data_bus.v:57$1_Y": {
+          "hide_name": 1,
+          "bits": [ 121 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:57.34-57.44"
+          }
+        },
+        "$logic_not$riscv_ooo_core/rtl/common_data_bus.v:57$2_Y": {
+          "hide_name": 1,
+          "bits": [ 123 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:57.48-57.60"
+          }
+        },
+        "$logic_not$riscv_ooo_core/rtl/common_data_bus.v:58$5_Y": {
+          "hide_name": 1,
+          "bits": [ 124 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:58.34-58.44"
+          }
+        },
+        "$logic_or$riscv_ooo_core/rtl/common_data_bus.v:57$3_Y": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:57.34-57.60"
+          }
+        },
+        "$logic_or$riscv_ooo_core/rtl/common_data_bus.v:58$6_Y": {
+          "hide_name": 1,
+          "bits": [ 118 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:58.34-58.60"
+          }
+        },
+        "$procmux$15_Y": {
+          "hide_name": 1,
+          "bits": [ 126 ],
+          "attributes": {
+          }
+        },
+        "$procmux$18_Y": {
+          "hide_name": 1,
+          "bits": [ 127 ],
+          "attributes": {
+          }
+        },
+        "cdb_data": {
+          "hide_name": 0,
+          "bits": [ 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:46.27-46.35"
+          }
+        },
+        "cdb_tag": {
+          "hide_name": 0,
+          "bits": [ 81, 82, 83, 84 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:45.27-45.34"
+          }
+        },
+        "cdb_valid": {
+          "hide_name": 0,
+          "bits": [ 80 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:44.27-44.36"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:28.27-28.30"
+          }
+        },
+        "fu0_data": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:34.27-34.35"
+          }
+        },
+        "fu0_grant": {
+          "hide_name": 0,
+          "bits": [ 41 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:35.27-35.36"
+          }
+        },
+        "fu0_tag": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:33.27-33.34"
+          }
+        },
+        "fu0_valid": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:32.27-32.36"
+          }
+        },
+        "fu1_data": {
+          "hide_name": 0,
+          "bits": [ 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:40.27-40.35"
+          }
+        },
+        "fu1_grant": {
+          "hide_name": 0,
+          "bits": [ 79 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:41.27-41.36"
+          }
+        },
+        "fu1_tag": {
+          "hide_name": 0,
+          "bits": [ 43, 44, 45, 46 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:39.27-39.34"
+          }
+        },
+        "fu1_valid": {
+          "hide_name": 0,
+          "bits": [ 42 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:38.27-38.36"
+          }
+        },
+        "rr_priority": {
+          "hide_name": 0,
+          "bits": [ 122 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:52.5-52.16"
+          }
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "riscv_ooo_core/rtl/common_data_bus.v:29.27-29.32"
+          }
+        }
+      }
+    }
+  }
+}
