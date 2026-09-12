@@ -1,4 +1,4 @@
-# RISC-V OoO Core
+# riscv_ooo_core
 
 A small out-of-order RISC-V-style processor core: in-order fetch and
 decode feeding a Tomasulo-style out-of-order execution backend (register
@@ -16,7 +16,7 @@ plus reserved-encoding fault detection.
 | Simulation | Icarus Verilog (`iverilog` / `vvp`) |
 | Waveform viewing | GTKWave |
 | Synthesis / netlist extraction | Yosys (`write_json`) |
-| Circuit diagrams | [netlistsvg](https://github.com/nturley/netlistsvg) (gate-level), hand-drawn SVG (architecture-level) |
+| Circuit diagrams | [netlistsvg](https://github.com/nturley/netlistsvg) (gate-level), hand-drawn SVG (architecture-level), AMD Xilinx Vivado schematic viewer (top-level, post-synthesis) |
 
 ## Background
 
@@ -80,16 +80,26 @@ full pipeline stall. What it buys back is that the Tomasulo machinery
 underneath — the part with the actual hazard-timing subtlety — never has
 to be touched to add front-end features on top of it.
 
-**Top-level architecture** — every block above as an instantiated
-sub-module, wires labelled with real signal names, generated directly
-from the RTL (`yosys` + [netlistsvg](https://github.com/nturley/netlistsvg),
-not hand-drawn):
+**Top-level architecture** — `riscv_ooo_top` in AMD Xilinx Vivado's
+post-synthesis schematic viewer, every instantiated sub-module shown
+exactly as Vivado placed and wired it, not hand-drawn:
 
-![riscv_ooo_top architecture](docs/images/riscv_ooo_top_arch.svg)
+![riscv_ooo_top Vivado schematic](docs/images/schematic_screenshot.png)
+
+Full-resolution schematic: [`docs/images/schematic.pdf`](docs/images/schematic.pdf).
+
+The same schematic with those sub-modules expanded down to the
+primitive FPGA cells underneath them — LUTs, `FDCE` flip-flops, and
+`CARRY4` arithmetic chains — exactly as synthesis placed every gate:
+
+![riscv_ooo_top Vivado schematic, expanded to primitives](docs/images/schematic_expanded_screenshot.png)
+
+Full-resolution schematic: [`docs/images/schematic_expanded.pdf`](docs/images/schematic_expanded.pdf).
 
 **The out-of-order backend itself** (`ooo_top`) — register alias table,
 reservation station, reorder buffer, ALU, and common data bus as five
-sub-blocks:
+sub-blocks, generated directly from the RTL (`yosys` +
+[netlistsvg](https://github.com/nturley/netlistsvg), not hand-drawn):
 
 ![ooo_top architecture](docs/images/ooo_top_arch.svg)
 
@@ -233,11 +243,13 @@ Waveform captured from `tb/tb_riscv_ooo_top.v`'s run in GTKWave —
 
 Full-resolution waveform: [`docs/images/GTKwave_output.pdf`](docs/images/GTKwave_output.pdf).
 
-Circuit diagrams above were regenerated from the RTL with Yosys
+Most circuit diagrams above were regenerated from the RTL with Yosys
 (`write_json`) piped into netlistsvg — commands for every diagram in this
 repository, including the reduced-size ones, are in
 `docs/NETLIST_DIAGRAMS.md` if you need to regenerate them after an RTL
-change.
+change. The two top-level schematics are captured directly from
+Vivado's post-synthesis schematic viewer instead, since that's the
+tool actually placing and wiring the design at that level.
 
 ## Power
 
