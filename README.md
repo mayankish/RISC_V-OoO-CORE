@@ -84,9 +84,9 @@ to be touched to add front-end features on top of it.
 post-synthesis schematic viewer, every instantiated sub-module shown
 exactly as Vivado placed and wired it, not hand-drawn:
 
-![riscv_ooo_top Vivado schematic](docs/images/schematic_screenshot.png)
+![riscv_ooo_top Vivado schematic](docs/schematic.pdf)
 
-Full-resolution schematic: [`docs/images/schematic.pdf`](docs/schematic.pdf).
+Full-resolution schematic: [`docs/schematic.pdf`](docs/schematic.pdf).
 
 The same schematic with those sub-modules expanded down to the
 primitive FPGA cells underneath them — LUTs, `FDCE` flip-flops, and
