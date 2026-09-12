@@ -1,4 +1,4 @@
-# riscv_ooo_core
+# RISC-V OoO CORE
 
 A small out-of-order RISC-V-style processor core: in-order fetch and
 decode feeding a Tomasulo-style out-of-order execution backend (register
@@ -13,8 +13,8 @@ plus reserved-encoding fault detection.
 | Layer | Tool |
 |---|---|
 | HDL | Verilog (IEEE 1364-2005) |
-| Simulation | Icarus Verilog (`iverilog` / `vvp`) |
-| Waveform viewing | GTKWave |
+| Simulation | AMD XILLINX Vivado (`iverilog` / `vvp`) |
+| Waveform viewing | Xillinx Vivado |
 | Synthesis / netlist extraction | Yosys (`write_json`) |
 | Circuit diagrams | [netlistsvg](https://github.com/nturley/netlistsvg) (gate-level), hand-drawn SVG (architecture-level), AMD Xilinx Vivado schematic viewer (top-level, post-synthesis) |
 
