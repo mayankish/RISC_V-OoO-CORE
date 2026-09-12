@@ -86,7 +86,7 @@ exactly as Vivado placed and wired it, not hand-drawn:
 
 ![riscv_ooo_top Vivado schematic](docs/images/schematic_screenshot.png)
 
-Full-resolution schematic: [`docs/images/schematic.pdf`](docs/images/schematic.pdf).
+Full-resolution schematic: [`docs/images/schematic.pdf`](docs/schematic.pdf).
 
 The same schematic with those sub-modules expanded down to the
 primitive FPGA cells underneath them — LUTs, `FDCE` flip-flops, and
@@ -94,7 +94,7 @@ primitive FPGA cells underneath them — LUTs, `FDCE` flip-flops, and
 
 ![riscv_ooo_top Vivado schematic, expanded to primitives](docs/images/schematic_expanded_screenshot.png)
 
-Full-resolution schematic: [`docs/images/schematic_expanded.pdf`](docs/images/schematic_expanded.pdf).
+Full-resolution schematic: [`docs/images/schematic_expanded.pdf`](docs/Schematic_Expanded.pdf).
 
 **The out-of-order backend itself** (`ooo_top`) — register alias table,
 reservation station, reorder buffer, ALU, and common data bus as five
